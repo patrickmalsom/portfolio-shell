@@ -1,0 +1,15 @@
+* KVCC Portfolio
+
+This project is a LaTeX shell to help create the second and fourth year teaching portfolio for the term process at KVCC.
+
+** File layout
+The main file is named =portfolio.tex=. This file has been written to create the specific layout required for the KVCC 2nd and 4th year term portfolio. This file is the starting point for latex compilation, but does not need to be edited (other than adding your name to the title page). *One important note*: You will use this file to "compile" the PDF using the TeX software.
+
+The file named =2-CourseMats.tex= also contains some configuration. This page acts as an /outline/ of your course materials, which is inteneded to be a guide for the reader to use to navigate the document.
+
+All other chapters of the portfolio has a separate included tex file. The these files only contain one line (the chapter title) and can be directly edited and added to by you. The file =A.CAS.tex= has a few lines included which outline a few of the pre-programmed features of the tex document.
+
+** Special commands
+*** =\StaplePDF{Printed Title}{pdf-filename}= :: Command to attach a multi page PDF
+*** =\StaplePDFOne{Printed Title}{pdf-filename}= :: Command to attach a single page PDF
+*** =\StaplePDFNoHeader{Printed Title}{pdf-filename}= :: Command to attach a multi page PDF without creating a reference to the Table of Contents
