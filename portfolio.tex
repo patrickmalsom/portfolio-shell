@@ -1,0 +1,125 @@
+\documentclass[twoside,11pt]{report}
+
+\usepackage{titlesec, blindtext, color, tocloft}
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hspace{20pt}}{0pt}{\Huge\bfseries}
+\setcounter{tocdepth}{1}
+
+\usepackage{scrextend}
+\usepackage{multicol}
+\usepackage[none]{hyphenat}
+
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[includeheadfoot, footskip=1in, inner=1.5in, outer=1in, top=0.75in, bottom=0.4in ]{geometry}
+
+\usepackage{enumitem}
+\setlist{noitemsep} % reduce vertical spacing on /lists
+
+% Configuration of the header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase\leftmark \hfill \nouppercase\rightmark}% LE -> Left part on Even pages
+\fancyfoot[C]{\thepage}
+
+%
+\usepackage{pdfpages}
+
+\newcommand{\StaplePDFOne}[2]{
+  \includepdf[ pages=1, noautoscale=true, offset=5 -20, pagecommand=\section{#1\label{s:#2}}, scale=0.78, frame ]{#2}
+  }
+
+\newcommand{\StaplePDF}[2]{
+  \includepdf[ pages=1, noautoscale=true, offset=5 -20, pagecommand={\section{#1\label{s:#2}}}, scale=0.78, frame ]{#2}
+  \includepdf[ pages=2-last, noautoscale=true, offset=5 -20, pagecommand={}, scale=0.78, frame]{#2}
+  }
+
+\newcommand{\StaplePDFNoHeader}[2]{
+  \includepdf[ pages=-, noautoscale=true, offset=5 -20, pagecommand={}, scale=0.78, frame]{#2}
+  }
+
+\newcommand{\itemattach}[2]{
+  \item \textbf{#1  (page \pageref{s:#2}})
+  }
+
+\usepackage[
+    hypertexnames=false,
+    pdftitle={Teaching Portfolio},
+    pdfauthor={Patrick Malsom},
+    bookmarksnumbered=true,     
+    bookmarksopen=true,         
+    bookmarksopenlevel=1,       
+    colorlinks=false,            
+    pdfstartview=Fit,           
+    pdfpagemode=UseOutlines
+]{hyperref}
+
+%========================================
+\begin{document}
+
+%========================================
+% Title Page
+\begin{titlepage}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{KVCClogo}
+
+\vspace*{3cm}
+{ \Huge \bfseries Teaching Portfolio }
+\vspace{1.5cm}
+
+\vspace{1.5cm}
+{\large \emph{Author:}\\}
+{\LARGE \textsc{Firstname Lastname}\\}
+\vspace{0.4cm}
+{\large Kalamazoo Valley Community College}\\
+\vspace{0.2cm}
+{\large Department of Physics}\\
+\vspace{0.2cm}
+{\large 6767 W O Ave, Kalamazoo, MI 49009}\\
+
+\end{center}
+\end{titlepage}
+
+%========================================
+% Page styling for first pages
+\leavevmode\thispagestyle{empty}\newpage
+\label{tableofcontents}\tableofcontents
+\clearpage
+\renewcommand\thechapter{\arabic{chapter}}
+\renewcommand{\chaptermark}[1]{\markboth{Part \thechapter: \quad #1}{}}
+%========================================
+
+\include{1-PhilosophicalStatement}
+\include{2-CourseMats}
+
+%========================================
+%Set the chapters titles to be capital letters
+\setcounter{chapter}{0}
+\renewcommand\thechapter{\Alph{chapter}}
+\renewcommand{\chaptermark}[1]{\markboth{Section \thechapter: \quad #1}{}}
+%========================================
+
+\include{A-CAS}
+\include{B-SampleHandouts}
+\include{C-ObjectiveExam}
+\include{D-ItemAnalysisExam}
+\include{E-Essay}
+\include{F-EssayAnalysis}
+\include{G-GradedTests}
+\include{H-PerformanceAssessment}
+\include{I-NarrativeAnalysisPerformanceAssessment}
+\include{J-TeachingNotes}
+\include{K-StudentNotes}
+
+%========================================
+%Set the chapters titles to be numeric and start at Ch 3
+\renewcommand\thechapter{\arabic{chapter}}
+\renewcommand{\chaptermark}[1]{\markboth{Part \thechapter: \quad #1}{}}
+\setcounter{chapter}{2}
+%========================================
+
+\include{3-ProblemAnalysis}
+\include{4-CV}
+
+\end{document}

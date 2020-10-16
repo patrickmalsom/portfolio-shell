@@ -1,0 +1,25 @@
+\chapter[Class Assignment Schedules]{Class Assignment Schedules and\\ Instructional Objectives}\label{A}
+% comments start with a percent symbol
+
+Latex or simply tex (pronounced tech) is an incredibly powerful document authoring software. Understanding the details of the language are not necessary to make a Teaching Portfolio.  This set of tex files will create a pdf Portfolio out of your writing and individual pdf files.
+
+% -------------------------------------------------
+% make a bulleted list of attached documents (this is optional)
+\subsection*{Attached Documents:}
+\begin{itemize}
+  \itemattach{Reference to multipage-pdf}{multipage-pdf}
+  \itemattach{Reference to singlepage-pdf}{singlepage-pdf}
+  \itemattach{Reference to multipage-pdf with no header}{multipage-pdf}
+\end{itemize}
+% -------------------------------------------------
+
+% There are 3 macros which attach pdf documents:
+
+% attach multi page pdf
+\StaplePDF{Title to print}{multipage-pdf}
+
+% attach single page pdf
+\StaplePDFOne{Title to print}{singlepage-pdf}
+
+% attach multi page pdf and omit section header
+\StaplePDFNoHeader{Title to print}{multipage-pdf}
