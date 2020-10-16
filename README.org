@@ -10,6 +10,6 @@ The file named =2-CourseMats.tex= also contains some configuration. This page ac
 All other chapters of the portfolio has a separate included tex file. The these files only contain one line (the chapter title) and can be directly edited and added to by you. The file =A.CAS.tex= has a few lines included which outline a few of the pre-programmed features of the tex document.
 
 ** Special commands
-*** =\StaplePDF{Printed Title}{pdf-filename}= :: Command to attach a multi page PDF
-*** =\StaplePDFOne{Printed Title}{pdf-filename}= :: Command to attach a single page PDF
-*** =\StaplePDFNoHeader{Printed Title}{pdf-filename}= :: Command to attach a multi page PDF without creating a reference to the Table of Contents
+- =\StaplePDF{Printed Title}{pdf-filename}= :: Command to attach a multi page PDF
+- =\StaplePDFOne{Printed Title}{pdf-filename}= :: Command to attach a single page PDF
+- =\StaplePDFNoHeader{Printed Title}{pdf-filename}= :: Command to attach a multi page PDF without creating a reference to the Table of Contents
